@@ -1,7 +1,7 @@
-import React from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
-import FarmProductLists from '../Components/FarmProductLists';
+import React from "react";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import FarmProductLists from "../Components/FarmProductLists";
 
 const FarmProduct = () => {
   return (
@@ -10,7 +10,7 @@ const FarmProduct = () => {
       <FarmProductLists />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default FarmProduct;

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+//import { useEffect, useState } from "react";
+//import axios from "axios";
 import "../styles/farmProductLists.css";
 import Rate from "./Rate";
 
@@ -84,6 +85,26 @@ const FarmProductLists = () => {
 
   return (
     <div>
+      <div className="search">
+        <div className="search_select">
+          <select id="city" name="city">
+            <option value="">city</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Abuja">Abuja</option>
+            <option value="Ibadan">Ibadan</option>
+          </select>
+        </div>
+        <div className="search_select">
+          <select id="country" name="country">
+            <option value="">category</option>
+            <option value="Food">Food</option>
+          </select>
+        </div>
+        <div className="search_input">
+          <input placeholder="" />
+          <button>Search</button>
+        </div>
+      </div>
       {/* I had to comment this out because of the error from the backend */}
       {/* {data.map((product) => {
         return (
@@ -107,6 +128,7 @@ const FarmProductLists = () => {
           </div>
         </div>)
       })} */}
+
 
       <div className="card-list">
         {products.map((product) => {
