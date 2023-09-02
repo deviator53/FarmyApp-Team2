@@ -12,10 +12,10 @@ import Navbar from "./Navbar";
 
 function StoreUpload() {
   const { setUserInfo } = useContext(UserContext);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [showCategoryPopup, setShowCategoryPopup] = useState(false);
-  const [newCategoryName, setNewCategoryName] = useState('')
-  const [categories, setCategories] = useState('')
+  const [newCategoryName, setNewCategoryName] = useState("");
+  const [categories, setCategories] = useState("");
 
   const navigate = useNavigate();
 
@@ -53,21 +53,28 @@ function StoreUpload() {
   };
 
   useEffect(() => {
-    axios.get()
-  })
+    axios
+      .get("api/v1/storeproducts/category")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   const handleCreateCategory = async () => {
     try {
       // Send the new category name to the server
-      const response = await axios.post('api/v1/storeproducts/category', {
+      const response = await axios.post("api/v1/storeproducts/category", {
         name: newCategoryName,
       });
-      
+
       // Update categories state with the new category
       setCategories([...categories, response.data]);
-      
+
       // Clear the newCategoryName state and close the popup
-      setNewCategoryName('');
+      setNewCategoryName("");
       setShowCategoryPopup(false);
     } catch (error) {
       console.error(error);
@@ -147,7 +154,8 @@ function StoreUpload() {
           </div>
           <div className="waitlist_post">
             <label className="form_label">Product Description</label>
-            <input
+            <textarea
+              rows={6}
               type="text"
               onChange={(e) => setProductDescription(e.target.value)}
               value={productDescription}
@@ -170,37 +178,46 @@ function StoreUpload() {
           <div className="waitlist_post">
             <label className="form_label">Category</label>
             <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="form_input"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="form_input"
             >
-                <option value="">Select a category...</option>
-                {/* Map over your categories here */}
-                {categories.map((category) => (
+              <option value="">Select a category...</option>
+              {/* Map over your categories here */}
+              {/* I have to comment this out because there's an error from the backend in regards to the API we're trying to fetch. So I can be able to work on the design of the page */}
+              {/* {categories.map((category) => (
                 <option key={category._id} value={category._id}>
-                    {category.name}
+                  {category.name}
                 </option>
-                ))}
+              ))} */}
             </select>
-            {selectedCategory === 'new' && (
-                <button onClick={() => setShowCategoryPopup(true)}>Create New Category</button>
+            {selectedCategory === "new" && (
+              <button onClick={() => setShowCategoryPopup(true)}>
+                Create New Category
+              </button>
             )}
-            </div>
-            {showCategoryPopup && (
+          </div>
+          {showCategoryPopup && (
             <div className="category-popup">
-                {/* Contents of the category creation popup */}
-                <input
+              {/* Contents of the category creation popup */}
+              <input
                 type="text"
                 onChange={(e) => setNewCategoryName(e.target.value)}
-                value = {newCategoryName}
+                value={newCategoryName}
                 className="form_input"
-                placeholder={"Enter the name of the categopry you're trying to create here"}
+                placeholder={
+                  "Enter the name of the categopry you're trying to create here"
+                }
                 // Add state and onChange handler for new category name
-                />
-                <button onClick={() => handleCreateCategory()}>Create Category</button>
-                <button onClick={() => setShowCategoryPopup(false)}>Cancel</button>
+              />
+              <button onClick={() => handleCreateCategory()}>
+                Create Category
+              </button>
+              <button onClick={() => setShowCategoryPopup(false)}>
+                Cancel
+              </button>
             </div>
-)}
+          )}
 
           <div className="waitlist_post">
             <label className="form_label">Per Unit Price</label>
