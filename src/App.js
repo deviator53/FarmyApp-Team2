@@ -10,6 +10,7 @@ import StoreUpload from './Components/StoreUpload';
 import axios from 'axios';
 import { UserContextProvider } from './context/UserContext';
 import FarmPEdit from './Components/FarmPEdit';
+import FarmProduct from './Pages/FarmProduct';
 
 function App() {
   // axios.defaults.baseURL = 'https://farmyapp.onrender.com';
@@ -27,6 +28,7 @@ function App() {
             <Route path='/uploadfarmproduct' element= {<FarmUpload/>}/>
             <Route path='/uploadstoreproduct' element={<StoreUpload/>}/>
             <Route path='/editfarmproduct/:id' element={<FarmPEdit/>}/>
+            <Route path='/farmproducts' element={<FarmProduct />}/>
             {/* <Route path='/faculty' element={<Faculty/>}/>
             <Route path='/publications' element={<Publications/>} />
             <Route path='/publications/publication/:publicationid' element={<PublicationDetails/> } />
