@@ -7,7 +7,7 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineCar } from "react-icons/ai";
 import '../styles/signup.css'
 
-import loho from '../static/FARMY EMB green..png'
+import loho from '../static/farmylogo.png'
 
 import SignIFForm from '../Components/SignIFForm';
 import SignICForm from '../Components/SignICForm';
@@ -67,7 +67,7 @@ export default function Signin() {
 
       </div>
       <div className='signufform'>
-        <img src={loho} alt='FarmyApp logo' className='lohosm'/>
+      <img src={loho} alt='FarmyApp logo' className='lohosm'/>
         <div>Welcome to FarmyApp</div>
         <div>
         <div className='signtext'>Sign in as</div>

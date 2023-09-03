@@ -107,7 +107,7 @@ function StoreUpload() {
           "Content-Type": "multipart/form-data",
         },
       });
-      //   console.log(response.data);
+        // console.log(response.data);
       notify();
       newRedirect();
       setIsLoading(false);

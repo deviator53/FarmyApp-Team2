@@ -8,7 +8,7 @@ import { AiOutlineCar } from "react-icons/ai";
 import '../styles/signup.css'
 
 // import SignUTargets from '../Components/SignUTargets'
-import loho from '../static/FARMY EMB green..png'
+import loho from '../static/farmylogo.png'
 import SignUFForm from '../Components/SignUFForm'
 import SignUSForm from '../Components/SignUSForm'
 import SignULForm from '../Components/SignULForm'
@@ -64,6 +64,7 @@ export default function Signup() {
 
       </div>
       <div className='signufform'>
+    
         <img src={loho} alt='FarmyApp logo' className='lohosm'/>
         <div>Welcome to FarmyApp</div>
         <div>
