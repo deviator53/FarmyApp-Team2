@@ -13,6 +13,7 @@
 .search_select select, .search_input button{
   font-size: 18px;
   font-weight: 500;
+  background: none;
 }
 
 .search_input{
@@ -33,6 +34,10 @@
   padding: 0.8rem 1.2rem;
   margin-left: -1.5rem;
   border-radius: 17px;
+}
+.search_input button:hover{
+  background: black;
+  cursor: pointer;
 }
 
 .card-list {

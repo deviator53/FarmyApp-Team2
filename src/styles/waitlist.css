@@ -38,7 +38,14 @@
 }
 
 .form_input {
-  border: 3px solid #0fa958;
+  /* border: 3px solid #0fa958; */
+  padding: 10px;
+  border-radius: 5px;
+  width: 95%;
+  align-self: center;
+}
+.form-input-border{
+  border: 2px solid #0fa958;
   padding: 10px;
   border-radius: 5px;
   width: 95%;
@@ -56,6 +63,9 @@
   cursor: pointer;
   /* margin-bottom: 20px; */
   /* margin-right: 20px; */
+}
+.pos_bt:hover{
+  background-color: black;
 }
 .container2 {
   width: 95%;

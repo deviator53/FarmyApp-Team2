@@ -148,7 +148,7 @@ function StoreUpload() {
               type="text"
               onChange={(e) => setProductName(e.target.value)}
               value={productName}
-              className="form_input"
+              className="form-input-border"
               placeholder={"Enter Product Name"}
             />
           </div>
@@ -159,7 +159,7 @@ function StoreUpload() {
               type="text"
               onChange={(e) => setProductDescription(e.target.value)}
               value={productDescription}
-              className="form_input"
+              className="form-input-border"
               placeholder={"Enter product description here."}
             />
           </div>
@@ -169,7 +169,7 @@ function StoreUpload() {
               type="text"
               onChange={(e) => setMeasuringScale(e.target.value)}
               value={measuringScale}
-              className="form_input"
+              className="form-input-border"
               placeholder={
                 "Enter Measuring Scale e.g. Tonnes, congos, crates..."
               }
@@ -180,7 +180,7 @@ function StoreUpload() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="form_input"
+              className="form-input-border"
             >
               <option value="">Select a category...</option>
               {/* Map over your categories here */}
@@ -204,7 +204,7 @@ function StoreUpload() {
                 type="text"
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 value={newCategoryName}
-                className="form_input"
+                className="form-input-border"
                 placeholder={
                   "Enter the name of the categopry you're trying to create here"
                 }
@@ -225,7 +225,7 @@ function StoreUpload() {
               type="text"
               onChange={(e) => setPrice(e.target.value)}
               value={price}
-              className="form_input"
+              className="form-input-border"
               placeholder={
                 "How much is the last price do you intend selling per scale you entered above"
               }
@@ -237,7 +237,7 @@ function StoreUpload() {
               type="date"
               onChange={(e) => setAvailabilityDate(e.target.value)}
               value={availabilityDate}
-              className="form_input"
+              className="form-input-border"
               placeholder={"When will this product be available for sale"}
             />
           </div>
@@ -247,7 +247,7 @@ function StoreUpload() {
               type="text"
               onChange={(e) => setAvailableQuantity(e.target.value)}
               value={availableQuantity}
-              className="form_input"
+              className="form-input-border"
               placeholder={
                 "What quantity of this product will be available for sale"
               }

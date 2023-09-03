@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
-    width: var(--container-width-lg);
+    /* width: var(--container-width-lg); */
+    padding: 10px;
     justify-content: space-between;
     background-color: var(--color-white);
     margin: auto;
@@ -11,6 +12,7 @@
 
 .navlogoi {
     width: 100px;
+    height: 50px;
     
 }
 
