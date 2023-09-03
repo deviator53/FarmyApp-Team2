@@ -100,7 +100,7 @@ function StoreUpload() {
           "Content-Type": "multipart/form-data",
         },
       });
-      //   console.log(response.data);
+        // console.log(response.data);
       notify();
       newRedirect();
       setIsLoading(false);
@@ -176,7 +176,7 @@ function StoreUpload() {
             >
                 <option value="">Select a category...</option>
                 {/* Map over your categories here */}
-                {categories.map((category) => (
+                {categories?.map((category) => (
                 <option key={category._id} value={category._id}>
                     {category.name}
                 </option>

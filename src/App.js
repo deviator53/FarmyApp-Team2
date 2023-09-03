@@ -13,7 +13,7 @@ import FarmPEdit from './Components/FarmPEdit';
 
 function App() {
   // axios.defaults.baseURL = 'https://farmyapp.onrender.com';
-  axios.defaults.baseURL = 'http://127.0.0.1:3500'
+  axios.defaults.baseURL = 'http://127.0.0.1:3000'
   axios.defaults.withCredentials = true;
   return (
     <div className="App">

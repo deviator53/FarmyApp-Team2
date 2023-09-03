@@ -1,12 +1,17 @@
+.container{
+    width: 100%;
+    background-color: grey;
+}
 .signContainer {
-    max-width: var(--container-width-md);
-    min-width: var(--container-width-sm);
-    min-height: 100vh;
+    width: var(--container-width-md);
+    /* min-width: var(--container-width-sm); */
+    height: 100vh;
     display: flex;
-    margin: auto;
-    align-items: center;
+    margin: 10px auto;
+    /* align-items: center;
     align-content: center;
-    justify-content: center;
+    justify-content: center; */
+    /* background-color: grey; */
 }
 
 .targets {
@@ -19,7 +24,7 @@
     flex-basis: 50%;
     align-items: center;
     background-color: var(--color-primary);
-    padding: 120px 10px;
+    padding: 60px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,8 +63,10 @@
 }
 
 .lohosm {
-    width: 20%;
-    justify-content: start;
+    width: 100px;
+    height: 70px;
+    /* object-fit: cover; */
+    /* justify-content: middle; */
 }
 
 .signutargetm{
@@ -81,6 +88,7 @@
 .sign_form {
     width: 100%;
     margin: auto;
+    background-color: white;
 }
 
 .sign_bt {

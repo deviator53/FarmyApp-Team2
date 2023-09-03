@@ -33,37 +33,86 @@ const SignUCForm = () => {
     toastr.warning(err, "Sorry");
   };
 
-  const handleSubmit = async (e) => {
-        e.preventDefault()
+  // const handleSubmit = async (e) => {
+  //       e.preventDefault()
 
-        await axios({
-        url: '/api/v1/user/',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
-        withCredentials: true,
-        data: JSON.stringify({name, email, phoneNumber, avatar, password, username})
-        }).then(response => {
-            axios({
-              url: 'api/v1/user/profile',
-              withCredentials: true,
-              method: "GET",
-            }).then(response => {
-              const userInfoData = response.data;
-              setUserInfo(userInfoData);
-              // console.log(userInfoData);
-              navigate('/myprofile');
-            });
-            // console.log(response)
-            // setRedirect(true);
-          })
-          .catch( (err) => {
-            // console.log(err)
-            displayError(err.response)
-          })
+  //       await axios({
+  //       url: '/api/v1/user/',
+  //       method: 'POST',
+  //       headers: {
+  //           'Content-Type': 'multipart/form-data',
+  //       },
+  //       withCredentials: true,
+  //       data: JSON.stringify({name, email, phoneNumber, avatar, password, username})
+  //       }).then(response => {
+  //           axios({
+  //             url: 'api/v1/user/profile',
+  //             withCredentials: true,
+  //             method: "GET",
+  //           }).then(response => {
+  //             const userInfoData = response.data;
+  //             setUserInfo(userInfoData);
+  //             // console.log(userInfoData);
+  //             navigate('/myprofile');
+  //           });
+  //           console.log(response)
+  //           // setRedirect(true);
+  //         })
+  //         .catch( (err) => {
+  //           console.log(err)
+  //           displayError(err.response)
+  //         })
     
-      }
+  //     }
+
+  const handleImageChange = (event) => {
+    const avatar = event.target.files[0];
+    setAvatar(avatar);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("phoneNumber", phoneNumber);
+    formData.append("password", password);
+    if (avatar) {
+      formData.append("avatar", avatar);
+    }
+  
+    // const data = {
+    //    name: name,
+    //    username: username,
+    //    email: email,
+    //    phoneNumber: phoneNumber,
+    //    password: password,
+    //    avatar: avatar
+
+    // }
+
+    const url =
+      `http://127.0.0.1:3000/api/v1/user`;
+
+    try {
+      const response = await axios.post(url, formData,{
+        headers: {
+          "access-control-allow-origin" : "*",
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      });
+      toastr.success(`${response.data.message}`);
+      console.log(response.data);
+
+    
+    } catch (error) {
+
+      toastr.warning(error,`${error?.response?.data?.message}`);
+      console.error(error);
+    }
+  };
 
   return (
     // <div className='signufform'>
@@ -127,7 +176,7 @@ const SignUCForm = () => {
                     <label className='form_label'>Display Image</label>
                     <input 
                         type="file"
-                        onChange={(e) => setAvatar(e.target.files)}
+                        onChange={handleImageChange}
                         className='custom-file-input'
                         accept="image/*"
                     /><br/>
@@ -141,7 +190,7 @@ const SignUCForm = () => {
                     </div>
                 </div>
                 
-                <button className="sign_bt" >Submit</button>
+                <button type="submit" className="sign_bt" >Submit</button>
 
             </form>
             <div className='already1'>Already have an account? <Link to='/signin' className='signalt'>Log in</Link></div>
