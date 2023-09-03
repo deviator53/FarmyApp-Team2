@@ -103,7 +103,7 @@ export default function Signin() {
                     <div className={`toggle-button ${selectedButton === 'Logistics' ? 'signueach1ms' : 'signueach1m'}`}>
                         <div  className='targetIcons'><AiOutlineCar/></div>
                         <div className='targetText'>
-                            <div>Logistic</div>
+                            <div>Logistics</div>
                         </div>
                         
                     </div>
