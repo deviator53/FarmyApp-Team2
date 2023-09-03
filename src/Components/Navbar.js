@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContext'
 import { Link } from 'react-router-dom';
 
 import profback from '../static/back.jpg'
-import loho from '../static/FARMY EMB green..png'
+import loho from '../static/farmylogo.png'
 import { MdAgriculture, MdStoreMallDirectory } from "react-icons/md";
 import { BsPerson, BsCart2 } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
